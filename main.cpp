@@ -1,6 +1,6 @@
 #include <iostream>
 #include <array>
-#include <string>
+#include <string.h>
 #include <ctime>
 #include <random>
 using namespace std;
@@ -8,6 +8,53 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 //Ejercicio 1
+
+void ejercicio1(string cadena){
+	
+	//utilizar la cadena como arreglo de caracteres
+	int resp=0;
+	for(int i = 0; i < cadena.size();i++){
+		char aux = cadena[i];
+		//solamente la A porque ya se sabe cuales son las letras que proceden
+		if(aux=='A' && i==1){
+			//revisar si lo que le sigue al and es 0 u 1
+			if((cadena[i-1]=='1' && cadena[i+3]=='0')||(cadena[i-1] == '0' && cadena[i+3] == '1')||(cadena[i-1] == '0' && cadena[i+3] == '0')){
+				resp=0;
+			}else if(cadena[i-1]=='1' && cadena[i+3]=='1'){
+				resp=1;
+			}else{
+				cout<<"revise la cadena que ingreso..."<<endl;
+			}
+		
+		}
+		else if(aux=='A'){
+			if((resp==1 && cadena[i+3] == '0')||(resp==0 && cadena[i+3] == '1')||(resp==0 && cadena[i+3] == '0')){
+				resp=0;
+			}else{
+				resp=1;
+			}
+		}
+		//revisar si es or con el caracter o
+		else if(aux=='O' && i==1){
+			if(resp=='0' && cadena[i+2]=='0' ){
+				resp=0;
+			}else{
+				resp=1;
+			}
+		}else if(aux=='O'){
+			if(resp==0 && cadena[i+2]=='0'){
+				resp=0;
+			}else{
+				resp=1;
+			}
+		}
+	}//fin del for que recorre la cadena
+	if(resp!=1){
+		cout<<"False"<<endl;
+	}else{
+		cout<<"True"<<endl;
+	}
+}
 
 //Ejercicio 2
 
@@ -45,11 +92,23 @@ void recursivo2(int arreglo[],int tam){
 }
 
 //Ejercicio 3
+/*
+double recursivo3(double n,double cont,double resp){
+    if(n==1){
+        resp=resp+(((2*cont)-1)/(cont(cont+1)));
+        return resp;
+    }
+    resp=resp+(((2cont)-1)/(cont(cont+1)));
+    recursivo3(n,cont+1,resp);
+}*/
+
+
 double recursivo3(double n,double cont, double k,double resp){
 	double aux=0;
 	if(cont==n){
 		//termina el ciclo
-		return resp;
+		aux=(((2*k)-1)/(k*(k+1)));
+		return resp+aux;
 	}else{
 		aux=(((2*k)-1)/(k*(k+1)));
 		return recursivo3(n,cont+1,k,resp+aux);
@@ -65,6 +124,12 @@ int main(int argc, char** argv) {
 		cin>>opcion;
 		switch(opcion){
 			case 1:{
+				string cadena;
+				
+				cout<<"Ingrese una cadena de AND y OR: ";
+				cin>>cadena;
+				
+				ejercicio1(cadena);
 				
 				break;
 			}//fin del case 1
