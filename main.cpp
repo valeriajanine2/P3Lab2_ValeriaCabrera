@@ -8,6 +8,14 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 //Ejercicio 2
+
+void imprimirArr(int arreglo[]){
+	for(int i = 0; i < 20; i++){
+		cout<<"["<<arreglo[i]<<"] ";
+	}
+	cout<<endl;
+}
+
 void recursivo2(int arreglo[],int tam){
 	if(tam==20){
 		//si ya llega al final se imprime el arreglo nuevo en el main
@@ -23,8 +31,12 @@ void recursivo2(int arreglo[],int tam){
 					arreglo[j+1]=aux;
 				}
 				
+				
 			}//fin del for interno
+			imprimirArr(arreglo);
 		}//fin del for externo
+		
+		
 		
 		tam++;
 	}
@@ -59,10 +71,11 @@ int main(int argc, char** argv) {
 				}
 				cout<<endl;
 				
+				cout<<endl<<"Iteraciones"<<endl;
 				recursivo2(arreglo,0);
 				
-				//imprimir el ascendente
-				cout<<"Arreglo Ascendente"<<endl;
+				//imprimir el final
+				cout<<endl<<"Arreglo Ascendente"<<endl;
 				for(int i = 0; i < 20; i++){
 					cout<<"["<<arreglo[i]<<"] ";
 				}
