@@ -92,22 +92,12 @@ void recursivo2(int arreglo[],int tam){
 }
 
 //Ejercicio 3
-/*
-double recursivo3(double n,double cont,double resp){
-    if(n==1){
-        resp=resp+(((2*cont)-1)/(cont(cont+1)));
-        return resp;
-    }
-    resp=resp+(((2cont)-1)/(cont(cont+1)));
-    recursivo3(n,cont+1,resp);
-}*/
-
 
 double recursivo3(double n,double cont, double k,double resp){
 	double aux=0;
 	if(cont==n){
 		//termina el ciclo
-		aux=(((2*k)-1)/(k*(k+1)));
+		
 		return resp+aux;
 	}else{
 		aux=(((2*k)-1)/(k*(k+1)));
