@@ -7,6 +7,8 @@ using namespace std;
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
+//Ejercicio 1
+
 //Ejercicio 2
 
 void imprimirArr(int arreglo[]){
@@ -39,6 +41,19 @@ void recursivo2(int arreglo[],int tam){
 		
 		
 		tam++;
+	}
+}
+
+//Ejercicio 3
+float recursivo3(float n,float cont, float k,float resp){
+	float aux=0;
+	if(cont==n){
+		//termina el ciclo
+		cout<<"Ya termino";
+		return resp;
+	}else{
+		aux=(((2*k)-1)/(k*(k+1)));
+		return recursivo3(n,cont+1,k,resp+aux);
 	}
 }
 
@@ -85,6 +100,14 @@ int main(int argc, char** argv) {
 				break;
 			}//fin del case 2
 			case 3:{
+				
+				float n,k=1,cont=0,resp=0;
+				
+				cout<<"Ingrese un numero: ";
+				cin>>n;
+				
+				cout<<recursivo3(n,cont,k,resp);
+				
 				
 				break;
 			}//fin del case 3
