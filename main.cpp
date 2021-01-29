@@ -10,13 +10,11 @@ using namespace std;
 //Ejercicio 2
 void recursivo2(int arreglo[],int tam){
 	if(tam==20){
-		//si ya llega al final se imprime el arreglo
-		for(int i = 0; i < 20; i++){
-			cout<<"["<<arreglo[i]<<"] ";
-		}
+		//si ya llega al final se imprime el arreglo nuevo en el main
+		
 	}else{
 		//recorrer con metodo burbuja
-		int aux=0;//hmmmm
+		int aux=0;
 		for(int i = 0; i < 20; i++){
 			for(int j = 0; j < 20; j++){
 				if(arreglo[j]>arreglo[j+1]){
@@ -68,6 +66,8 @@ int main(int argc, char** argv) {
 				for(int i = 0; i < 20; i++){
 					cout<<"["<<arreglo[i]<<"] ";
 				}
+				
+				cout<<endl;
 				
 				break;
 			}//fin del case 2
