@@ -45,11 +45,10 @@ void recursivo2(int arreglo[],int tam){
 }
 
 //Ejercicio 3
-float recursivo3(float n,float cont, float k,float resp){
-	float aux=0;
+double recursivo3(double n,double cont, double k,double resp){
+	double aux=0;
 	if(cont==n){
 		//termina el ciclo
-		cout<<"Ya termino";
 		return resp;
 	}else{
 		aux=(((2*k)-1)/(k*(k+1)));
@@ -101,12 +100,18 @@ int main(int argc, char** argv) {
 			}//fin del case 2
 			case 3:{
 				
-				float n,k=1,cont=0,resp=0;
+				double n,k=1,cont=0,resp=0;
 				
 				cout<<"Ingrese un numero: ";
 				cin>>n;
 				
-				cout<<recursivo3(n,cont,k,resp);
+				while(n<1){
+					cout<<"Asegurese de ingresar un numero mayor de 1"<<endl;
+					cout<<"Ingrese un numero: ";
+					cin>>n;
+				}
+				
+				cout<<recursivo3(n,cont,k,resp)<<endl;
 				
 				
 				break;
